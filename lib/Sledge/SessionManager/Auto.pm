@@ -3,7 +3,7 @@ package Sledge::SessionManager::Auto;
 use strict;
 use warnings;
 use base 'Sledge::SessionManager';
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Sledge::SessionManager::Cookie;
 use Sledge::SessionManager::StickyQuery;
@@ -15,7 +15,7 @@ sub import {
     my $pkg   = caller(0);
     no strict 'refs';
     *{"$pkg\::redirect"} = sub {
-        my $self = shift;
+        my ($self,) = @_;
 
         my $meth = (
             $self->mobile_agent->is_non_mobile

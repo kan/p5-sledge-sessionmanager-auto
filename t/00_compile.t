@@ -1,4 +1,8 @@
 use strict;
 use Test::More tests => 1;
 
-BEGIN { use_ok 'Sledge::SessionManager::Auto' }
+BEGIN {
+    eval q[use Sledge::SessionManager::Cookie; use Sledge::SessionManager::StickyQuery; use Sledge::SessionManager::MobileID;];
+    plan skip_all => "Sledge::TestPages required for testing base" if $@;
+    use_ok 'Sledge::SessionManager::Auto';
+}
