@@ -3,7 +3,7 @@ package Sledge::SessionManager::Auto;
 use strict;
 use warnings;
 use base 'Sledge::SessionManager';
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 use Sledge::SessionManager::Cookie;
 use Sledge::SessionManager::StickyQuery;
